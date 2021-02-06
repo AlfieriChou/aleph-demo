@@ -1,19 +1,17 @@
 import type { APIRequest } from 'aleph/types.ts'
 
-const store = globalThis as any
-
 export default async function handler(req: APIRequest) {
-  let count = store.$count || 0
+  let count = window.$count || 0
 
   switch (req.params.action) {
     case 'increase':
       count++
-      store.$count = count
+      window.$count = count
       req.json({ count })
       break
     case 'decrease':
       count--
-      store.$count = count
+      window.$count = count
       req.json({ count })
       break
     default:
