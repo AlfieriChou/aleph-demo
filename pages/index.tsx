@@ -3,7 +3,7 @@ import React from 'react'
 import Logo from '../components/logo.tsx'
 import useCounter from '../lib/useCounter.ts'
 
-export default function Home() {
+const Home = () => {
   const [count, isSyncing, increase, decrease] = useCounter()
   const version = useDeno(() => Deno.version.deno)
 
@@ -36,3 +36,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

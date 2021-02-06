@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export default function useCounter(): [number, boolean, () => void, () => void] {
+const useCounter = (): [number, boolean, () => void, () => void] => {
   const [count, setCount] = useState(0)
   const [isSyncing, setIsSyncing] = useState(true)
   const increase = useCallback(() => {
@@ -27,3 +27,5 @@ export default function useCounter(): [number, boolean, () => void, () => void] 
 
   return [count, isSyncing, increase, decrease]
 }
+
+export default useCounter
